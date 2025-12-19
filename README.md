@@ -1,11 +1,11 @@
 # DevLab - Spring Boot Tech Stack Demo
 
-Spring Boot (Java 17) 기반으로 ElasticSearch, Redis, Kafka, Prometheus 등 다양한 기술 스택을 통합하고 테스트하는 데모 프로젝트입니다.
+Spring Boot (Java 11) 기반으로 ElasticSearch, Redis, Kafka, Prometheus 등 다양한 기술 스택을 통합하고 테스트하는 데모 프로젝트입니다.
 
 ## 🛠 Tech Stack
 
-- **Java**: 17
-- **Framework**: Spring Boot 3.4.12
+- **Java**: 11
+- **Framework**: Spring Boot 2.7.18
 - **Database / Search**:
   - **ElasticSearch 7.17**: 검색 엔진 및 문서 저장소
   - **Redis**: 캐싱 및 세션 스토리지
