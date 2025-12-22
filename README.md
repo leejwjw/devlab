@@ -45,6 +45,17 @@ docker-compose ps  # 서비스 상태 확인
 
 애플리케이션이 시작되면 http://localhost:8080 에서 접근 가능합니다.
 
+### 3. 서비스 대시보드 (선택)
+
+모든 서비스에 한 곳에서 빠르게 접속:
+
+```bash
+cd dashboard
+npm run dev
+```
+
+브라우저에서 http://localhost:5173 접속하여 각 서비스 카드 클릭
+
 ## Prometheus & Grafana 테스트
 
 ### Step 1: Actuator 메트릭 확인
@@ -193,3 +204,13 @@ docker-compose down
 # 볼륨까지 삭제 (데이터 초기화)
 docker-compose down -v
 ```
+
+## Main
+![alt text](image.png)
+## Prometheus & Grapana
+![alt text](image-1.png)
+## elasticsearch
+![alt text](image-3.png)
+## kafka
+![alt text](image-4.png)
+## redis
