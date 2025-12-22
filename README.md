@@ -29,8 +29,11 @@ docker-compose ps  # 서비스 상태 확인
 
 실행되는 서비스:
 - **ElasticSearch**: http://localhost:9200
+- **Kibana** (ElasticSearch UI): http://localhost:5601
 - **Redis**: localhost:6379
+- **RedisInsight** (Redis GUI): http://localhost:5540
 - **Kafka**: localhost:9092 (Zookeeper: 2181)
+- **Kafka UI**: http://localhost:8090
 - **Prometheus**: http://localhost:9090
 - **Grafana**: http://localhost:3000 (ID: admin / PW: secret)
 

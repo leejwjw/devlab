@@ -12,11 +12,33 @@ services:
     networks:
       - devlab-net
 
+  kibana:
+    image: 'docker.elastic.co/kibana/kibana:7.17.10'
+    container_name: devlab-kibana
+    ports:
+      - '5601:5601'
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    networks:
+      - devlab-net
+
   redis:
     image: 'redis:latest'
     container_name: devlab-redis
     ports:
       - '6379:6379'
+    networks:
+      - devlab-net
+
+  redis-insight:
+    image: 'redis/redisinsight:latest'
+    container_name: devlab-redis-insight
+    ports:
+      - '5540:5540'
+    depends_on:
+      - redis
     networks:
       - devlab-net
 
@@ -45,6 +67,20 @@ services:
       - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
     depends_on:
       - zookeeper
+    networks:
+      - devlab-net
+
+  kafka-ui:
+    image: 'provectuslabs/kafka-ui:latest'
+    container_name: devlab-kafka-ui
+    ports:
+      - '8090:8080'
+    environment:
+      - KAFKA_CLUSTERS_0_NAME=devlab-kafka
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:9092
+      - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
+    depends_on:
+      - kafka
     networks:
       - devlab-net
 
